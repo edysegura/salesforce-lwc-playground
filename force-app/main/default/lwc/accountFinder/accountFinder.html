@@ -8,6 +8,15 @@
       onchange={handleChange}
     >
     </lightning-input>
-    <lightning-button label="reset" onclick={reset}></lightning-button>
+    <lightning-button label="Reset" onclick={reset}></lightning-button>
+  </lightning-card>
+  <lightning-card>
+    <template lwc:if={accounts.data}>
+      <ul>
+        <template for:each={accounts.data} for:item="account">
+          <li key={account.Id}>{account.Name}</li>
+        </template>
+      </ul>
+    </template>
   </lightning-card>
 </template>
